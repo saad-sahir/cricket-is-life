@@ -8,15 +8,7 @@ if not cap.isOpened():
     print("Error: Could not open video file.")
     exit()
 
-while True:
-    # Read a frame from the video
-    ret, frame = cap.read()
-
-    if not ret:
-        print("End of video or error reading frame.")
-        break
-
-    # Convert the frame to grayscale
+def mask_white(frame):
     gray_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     
     # Apply Gaussian blur to the grayscale frame
@@ -29,15 +21,27 @@ while True:
     mask_3channel = cv2.merge([mask, mask, mask])
 
     # Apply the mask to the original frame
-    masked_frame = cv2.bitwise_and(frame, mask_3channel)
+    return cv2.bitwise_and(frame, mask_3channel)
 
-    # Display the masked frame
-    cv2.imshow('Masked Video', masked_frame)
 
-    # Break the loop if 'q' is pressed
-    if cv2.waitKey(1) & 0xFF == ord('q'):
-        break
+if __name__ == "__main__":
+    while True:
+        # Read a frame from the video
+        ret, frame = cap.read()
 
-# Release the video capture and close OpenCV windows
-cap.release()
-cv2.destroyAllWindows()
+        if not ret:
+            print("End of video or error reading frame.")
+            break
+
+        masked_frame = mask_white(frame)
+
+        # Display the masked frame
+        cv2.imshow('Masked Video', masked_frame)
+
+        # Break the loop if 'q' is pressed
+        if cv2.waitKey(1) & 0xFF == ord('q'):
+            break
+
+    # Release the video capture and close OpenCV windows
+    cap.release()
+    cv2.destroyAllWindows()
