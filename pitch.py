@@ -34,6 +34,35 @@ pitch_map = { ## width, height
     30: (.9231, .515),
 }
 
+pitch_map_cb = {
+    1: (0, 0),
+    2: (0, 244),
+    3: (0, 2012),
+    4: (0, 2256),
+    5: (51, 0),
+    6: (51, 122),
+    7: (51, 244),
+    8: (51, 2012),
+    9: (51, 2134),
+    10: (51, 2256),
+    11: (315, 0),
+    12: (315, 122),
+    13: (315, 244),
+    14: (315, 2012),
+    15: (315, 2134),
+    16: (315, 2256),
+    17: (366, 0),
+    18: (366, 244),
+    19: (366, 2012),
+    20: (366, 2256),
+    21: (183, 122),
+    22: (183, 2132),
+    23: (0, 122),
+    24: (0, 2134),
+    25: (366, 122),
+    26: (366, 2134)
+}
+
 frame_pitch_map = { ## width mul, height mul
     1: (.529, .973),
     2: (.366, .742),
@@ -46,12 +75,19 @@ frame_pitch_map = { ## width mul, height mul
     13: (.762, .687),
 }
 
-def get_warped_pitch(image_path, frame_pitch_map, pitch='normal'):
+def get_warped_pitch(image_path, frame_pitch_map, p='normal'):
     # Load images
-    pitch = cv2.imread('pitch.png' if pitch == 'normal' else 'pitch_cb.png')
+    global pitch_map, pitch_map_cb
+    
+    pitch = cv2.imread('images/pitch.png' if p == 'normal' else 'images/pitch_cb.png')
     pitch = cv2.cvtColor(pitch, cv2.COLOR_RGB2BGR)
     frame = cv2.imread(image_path)
     frame = cv2.cvtColor(frame, cv2.COLOR_RGB2BGR)
+
+    if p == 'normal':
+        pitch_map_ref = pitch_map
+    else:
+        pitch_map_ref = pitch_map_cb
 
     # Extract height and width of both images
     pitch_height, pitch_width = pitch.shape[:2]
@@ -62,8 +98,11 @@ def get_warped_pitch(image_path, frame_pitch_map, pitch='normal'):
     frame_points = []
 
     for k in frame_pitch_map.keys():
-        if k in pitch_map.keys():
-            pitch_points.append((int(pitch_width * pitch_map[k][0]), int(pitch_height * pitch_map[k][1])))
+        if k in pitch_map_ref.keys():
+            if p == 'normal':
+                pitch_points.append((int(pitch_width * pitch_map_ref[k][0]), int(pitch_height * pitch_map_ref[k][1])))
+            else:
+                pitch_points.append((int(pitch_map_ref[k][0]), int(pitch_map_ref[k][1])))
             frame_points.append((frame_pitch_map[k][0], frame_pitch_map[k][1]))
 
     pitch_points = np.array(pitch_points, dtype=np.float32)

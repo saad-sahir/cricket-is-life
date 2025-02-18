@@ -3,7 +3,7 @@ from ultralytics import YOLO
 
 # Load the YOLO model
 model = YOLO("yolo11s-pose.pt")
-cap = cv2.VideoCapture('video.mp4')
+cap = cv2.VideoCapture('videos\AUS_bowling_front.mp4')
 
 # Define a function to draw the skeleton
 def draw_skeleton(frame, keypoints):
