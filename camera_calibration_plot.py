@@ -1,18 +1,5 @@
 #!/usr/bin/env python
 
-'''
-Plot camera calibration extrinsics.
-
-usage:
-    camera_calibration_show_extrinsics.py [--calibration <input path>] [--cam_width] [--cam_height] [--scale_focal] [--patternCentric ]
-
-default values:
-    --calibration    : left_intrinsics.yml
-    --cam_width      : 0.064/2
-    --cam_height     : 0.048/2
-    --scale_focal    : 40
-    --patternCentric : True
-'''
 
 # Python 2/3 compatibility
 from __future__ import print_function
@@ -104,7 +91,7 @@ def create_board_model(extrinsics, board_width, board_height, square_size, draw_
 
     # draw calibration board
     X_board = np.ones((4,5))
-    #X_board_cam = np.ones((extrinsics.shape[0],4,5))
+    # X_board_cam = np.ones((extrinsics.shape[0],4,5))
     X_board[0:3,0] = [0,0,0]
     X_board[0:3,1] = [width,0,0]
     X_board[0:3,2] = [width,height,0]
@@ -177,19 +164,20 @@ def main():
 
     parser = argparse.ArgumentParser(description='Plot camera calibration extrinsics.',
                                      formatter_class=argparse.ArgumentDefaultsHelpFormatter)
-    parser.add_argument('--calibration', type=str, default='left_intrinsics.yml',
+    parser.add_argument('--calibration', type=str, default='charuco.yml',
                         help='YAML camera calibration file.')
-    parser.add_argument('--cam_width', type=float, default=0.064/2,
+    parser.add_argument('--cam_width', type=float, default=692,
                         help='Width/2 of the displayed camera.')
-    parser.add_argument('--cam_height', type=float, default=0.048/2,
+    parser.add_argument('--cam_height', type=float, default=520,
                         help='Height/2 of the displayed camera.')
-    parser.add_argument('--scale_focal', type=float, default=40,
+    parser.add_argument('--scale_focal', type=float, default=.5,
                         help='Value to scale the focal length.')
     parser.add_argument('--patternCentric', action='store_true',
                         help='The calibration board is static and the camera is moving.')
     args = parser.parse_args()
 
     fs = cv.FileStorage(cv.samples.findFile(args.calibration), cv.FILE_STORAGE_READ)
+    
     board_width = int(fs.getNode('board_width').real())
     board_height = int(fs.getNode('board_height').real())
     square_size = fs.getNode('square_size').real()
@@ -200,7 +188,7 @@ def main():
     from mpl_toolkits.mplot3d import Axes3D  # pylint: disable=unused-variable
 
     fig = plt.figure()
-    ax = fig.gca(projection='3d')
+    ax = fig.add_subplot(111, projection='3d')
     ax.set_aspect("auto")
 
     cam_width = args.cam_width
@@ -235,6 +223,5 @@ def main():
 
 
 if __name__ == '__main__':
-    print(__doc__)
     main()
     cv.destroyAllWindows()
