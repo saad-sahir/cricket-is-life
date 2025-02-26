@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document version="1.5.0">
+  <chunk label="Chunk 1" enabled="true">
+    <sensors next_id="1">
+      <sensor id="0" label="Canon EOS 6D Mark II, EF50mm f/2.5 Compact Macro (50mm)" type="frame">
+        <resolution width="5536" height="4160"/>
+        <property name="pixel_width" value="0.0042899205202312132"/>
+        <property name="pixel_height" value="0.0037794711538461537"/>
+        <property name="focal_length" value="50"/>
+        <property name="layer_index" value="0"/>
+        <bands>
+          <band label="Red"/>
+          <band label="Green"/>
+          <band label="Blue"/>
+        </bands>
+        <data_type>uint8</data_type>
+        <meta>
+          <property name="Exif/BodySerialNumber" value="055051000374"/>
+          <property name="Exif/LensModel" value="EF50mm f/2.5 Compact Macro"/>
+          <property name="Exif/LensSerialNumber" value="0000000000"/>
+          <property name="Exif/Make" value="Canon"/>
+          <property name="Exif/Model" value="Canon EOS 6D Mark II"/>
+        </meta>
+      </sensor>
+    </sensors>
+    <components next_id="0"/>
+    <cameras next_id="1" next_group_id="0">
+      <camera id="0" sensor_id="0" label="IMG_9553">
+        <orientation>1</orientation>
+      </camera>
+    </cameras>
+    <markers next_id="2" next_group_id="0">
+      <marker id="0" label="point 1"/>
+      <marker id="1" label="point 2"/>
+    </markers>
+    <reference>LOCAL_CS["Local Coordinates (m)",LOCAL_DATUM["Local Datum",0],UNIT["metre",1,AUTHORITY["EPSG","9001"]]]</reference>
+    <settings>
+      <property name="accuracy_tiepoints" value="1"/>
+      <property name="accuracy_cameras" value="10"/>
+      <property name="accuracy_cameras_ypr" value="10"/>
+      <property name="accuracy_markers" value="0.0050000000000000001"/>
+      <property name="accuracy_scalebars" value="0.001"/>
+      <property name="accuracy_projections" value="0.5"/>
+    </settings>
+    <frames next_id="1">
+      <frame id="0">
+        <markers>
+          <marker marker_id="0">
+            <location camera_id="0" pinned="true" x="1669.13208" y="1393.20752"/>
+          </marker>
+          <marker marker_id="1">
+            <location camera_id="0" pinned="true" x="2483.47168" y="1854.3396"/>
+          </marker>
+        </markers>
+      </frame>
+    </frames>
+  </chunk>
+</document>

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document version="1.5.0">
+  <chunk label="Chunk 1" enabled="true">
+    <sensors next_id="1">
+      <sensor id="0" label="Canon EOS 6D Mark II, EF50mm f/2.5 Compact Macro (50mm)" type="frame">
+        <resolution width="5536" height="4160"/>
+        <property name="pixel_width" value="0.0042899205202312132"/>
+        <property name="pixel_height" value="0.0037794711538461537"/>
+        <property name="focal_length" value="50"/>
+        <property name="layer_index" value="0"/>
+        <bands>
+          <band label="Red"/>
+          <band label="Green"/>
+          <band label="Blue"/>
+        </bands>
+        <data_type>uint8</data_type>
+        <meta>
+          <property name="Exif/BodySerialNumber" value="055051000374"/>
+          <property name="Exif/LensSerialNumber" value="0000000000"/>
+          <property name="Exif/Make" value="Canon"/>
+          <property name="Exif/Model" value="Canon EOS 6D Mark II"/>
+        </meta>
+      </sensor>
+    </sensors>
+    <components next_id="0"/>
+    <cameras next_id="1" next_group_id="0">
+      <camera id="0" sensor_id="0" label="IMG_9553">
+        <orientation>1</orientation>
+      </camera>
+    </cameras>
+    <markers next_id="24" next_group_id="0">
+      <marker id="0" label="point 1"/>
+      <marker id="1" label="point 2"/>
+      <marker id="2" label="point 3"/>
+      <marker id="3" label="point 4"/>
+      <marker id="4" label="point 5"/>
+      <marker id="5" label="point 6"/>
+      <marker id="6" label="point 7"/>
+      <marker id="7" label="point 8"/>
+      <marker id="8" label="point 9"/>
+      <marker id="9" label="point 10"/>
+      <marker id="10" label="point 11"/>
+      <marker id="11" label="point 12"/>
+      <marker id="12" label="point 13"/>
+      <marker id="13" label="point 14"/>
+      <marker id="14" label="point 15"/>
+      <marker id="15" label="point 16"/>
+      <marker id="16" label="point 17"/>
+      <marker id="17" label="point 18"/>
+      <marker id="18" label="point 19"/>
+      <marker id="19" label="point 20"/>
+      <marker id="20" label="point 21"/>
+      <marker id="21" label="point 22"/>
+      <marker id="22" label="point 23"/>
+      <marker id="23" label="point 24"/>
+    </markers>
+    <reference>LOCAL_CS["Local Coordinates (m)",LOCAL_DATUM["Local Datum",0],UNIT["metre",1,AUTHORITY["EPSG","9001"]]]</reference>
+    <settings>
+      <property name="accuracy_tiepoints" value="1"/>
+      <property name="accuracy_cameras" value="10"/>
+      <property name="accuracy_cameras_ypr" value="10"/>
+      <property name="accuracy_markers" value="0.0050000000000000001"/>
+      <property name="accuracy_scalebars" value="0.001"/>
+      <property name="accuracy_projections" value="0.5"/>
+    </settings>
+    <frames next_id="1">
+      <frame id="0">
+        <markers>
+          <marker marker_id="0">
+          <location camera_id="0" pinned="true" x="1976.4775390625" y="2935.260498046875"/>
+          </marker>
+<marker marker_id="1">
+          <location camera_id="0" pinned="true" x="1931.0068359375" y="2447.712890625"/>
+          </marker>
+<marker marker_id="2">
+          <location camera_id="0" pinned="true" x="1884.490966796875" y="1943.0665283203125"/>
+          </marker>
+<marker marker_id="3">
+          <location camera_id="0" pinned="true" x="1834.6531982421875" y="1424.2332763671875"/>
+          </marker>
+<marker marker_id="4">
+          <location camera_id="0" pinned="true" x="2370.845947265625" y="2795.33740234375"/>
+          </marker>
+<marker marker_id="5">
+          <location camera_id="0" pinned="true" x="2332.0625" y="2320.543701171875"/>
+          </marker>
+<marker marker_id="6">
+          <location camera_id="0" pinned="true" x="2297.00830078125" y="1833.503662109375"/>
+          </marker>
+<marker marker_id="7">
+          <location camera_id="0" pinned="true" x="2254.93310546875" y="1329.612548828125"/>
+          </marker>
+<marker marker_id="8">
+          <location camera_id="0" pinned="true" x="2739.368896484375" y="2664.614013671875"/>
+          </marker>
+<marker marker_id="9">
+          <location camera_id="0" pinned="true" x="2704.841796875" y="2203.390869140625"/>
+          </marker>
+<marker marker_id="10">
+          <location camera_id="0" pinned="true" x="2675.933837890625" y="1729.91845703125"/>
+          </marker>
+<marker marker_id="11">
+          <location camera_id="0" pinned="true" x="2643.69287109375" y="1242.7275390625"/>
+          </marker>
+<marker marker_id="12">
+          <location camera_id="0" pinned="true" x="3081.933837890625" y="2541.488037109375"/>
+          </marker>
+<marker marker_id="13">
+          <location camera_id="0" pinned="true" x="3054.558837890625" y="2092.858642578125"/>
+          </marker>
+<marker marker_id="14">
+          <location camera_id="0" pinned="true" x="3035.85546875" y="1634.136474609375"/>
+          </marker>
+<marker marker_id="15">
+          <location camera_id="0" pinned="true" x="3008.675048828125" y="1161.089599609375"/>
+          </marker>
+<marker marker_id="16">
+          <location camera_id="0" pinned="true" x="3399.277587890625" y="2426.676025390625"/>
+          </marker>
+<marker marker_id="17">
+          <location camera_id="0" pinned="true" x="3381.84033203125" y="1991.505859375"/>
+          </marker>
+<marker marker_id="18">
+          <location camera_id="0" pinned="true" x="3366.2470703125" y="1545.3470458984375"/>
+          </marker>
+<marker marker_id="19">
+          <location camera_id="0" pinned="true" x="3343.174560546875" y="1086.5072021484375"/>
+          </marker>
+<marker marker_id="20">
+          <location camera_id="0" pinned="true" x="3700.201416015625" y="2318.052490234375"/>
+          </marker>
+<marker marker_id="21">
+          <location camera_id="0" pinned="true" x="3690.299560546875" y="1895.159912109375"/>
+          </marker>
+<marker marker_id="22">
+          <location camera_id="0" pinned="true" x="3677.644775390625" y="1461.3115234375"/>
+          </marker>
+<marker marker_id="23">
+          <location camera_id="0" pinned="true" x="3664.281494140625" y="1016.3136596679688"/>
+          </marker>
+        </markers>
+      </frame>
+    </frames>
+  </chunk>
+</document>
